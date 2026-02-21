@@ -1,0 +1,10 @@
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+Start time: 16:29:57 on Feb 21,2026
+vlog -work work -suppress 2244 -l logs/compile_tb.log ../lab_03_tb_register_file.sv 
+-- Compiling module lab_03_tb_register_file
+-- Compiling module register_file_ref
+
+Top level modules:
+	lab_03_tb_register_file
+End time: 16:29:57 on Feb 21,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

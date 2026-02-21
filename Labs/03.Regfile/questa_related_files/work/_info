@@ -1,0 +1,169 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s12c _opt
+R0
+!s11f vlog 2024.1 2024.02, Feb  1 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/iverilog/repos/APS/Labs/03. Register file and memory/questa_related_files
+T_opt
+!s110 1771680507
+V0k@3NU=Q16Jn58>;<U_0k0
+Z2 04 23 4 work lab_03_tb_register_file fast 0
+=1-e4e7493747fd-6999b2fb-1c-144c
+R0
+Z3 !s12f OEM100
+Z4 !s12b OEM100
+Z5 !s124 OEM100
+o-quiet -auto_acc_if_foreign -work work -debugdb +acc
+Z6 tCvgOpt 0
+n@_opt
+Z7 OL;O;2024.1;79
+R1
+T_opt1
+!s110 1771680599
+VeOOEFUI]3c05eZU<@<3g90
+R2
+=1-e4e7493747fd-6999b356-2bd-3e5c
+R0
+R3
+R4
+R5
+o-quiet -auto_acc_if_foreign -work work -suppress 7033 -debugdb +acc
+R6
+n@_opt1
+R7
+vinstr_mem
+Z8 2D:\iverilog\repos\APS\Labs\03.Regfile\instr_mem.sv|D:\iverilog\repos\APS\Labs\03.Regfile\memory_pkg.sv|D:\iverilog\repos\APS\Labs\03.Regfile\register_file.sv|D:\iverilog\repos\APS\Labs\03.Regfile\lab_03_tb_register_file.sv
+Z9 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z10 DXx4 work 10 memory_pkg 0 22 zP_^Lie75=llg;HYM1a7:0
+Z11 !s110 1771680597
+!i10b 1
+!s100 fX7^fENi?m>fB`lRVNE>k1
+IH18VIc;N3KAKQ]<MCI2Ub2
+S1
+Z12 dD:/iverilog/repos/APS/Labs/03.Regfile/questa_related_files
+w1771680452
+8D:\iverilog\repos\APS\Labs\03.Regfile\instr_mem.sv
+FD:\iverilog\repos\APS\Labs\03.Regfile\instr_mem.sv
+!i122 19
+L0 1 21
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2024.1;79
+r1
+!s85 0
+31
+Z15 !s108 1771680596.000000
+Z16 !s107 D:\iverilog\repos\APS\Labs\03.Regfile\lab_03_tb_register_file.sv|D:\iverilog\repos\APS\Labs\03.Regfile\register_file.sv|D:\iverilog\repos\APS\Labs\03.Regfile\memory_pkg.sv|D:\iverilog\repos\APS\Labs\03.Regfile\instr_mem.sv|
+Z17 !s90 -work|work|-suppress|2244|-l|logs/compile_rtl.log|-f|../rtl.files|
+!i113 0
+Z18 o-suppress 2244 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R6
+vlab_03_tb_register_file
+Z19 2../lab_03_tb_register_file.sv
+R9
+R11
+!i10b 1
+!s100 d3z6S>Z`F;FU54@_A8o_Q3
+Ikf:iEd66QHhYdgijN]Ocn1
+S1
+R12
+Z20 w1771620471
+Z21 8../lab_03_tb_register_file.sv
+Z22 F../lab_03_tb_register_file.sv
+!i122 20
+L0 11 175
+R13
+R14
+r1
+!s85 0
+31
+Z23 !s108 1771680597.000000
+Z24 !s107 ../lab_03_tb_register_file.sv|
+Z25 !s90 -work|work|-suppress|2244|-l|logs/compile_tb.log|../lab_03_tb_register_file.sv|
+!i113 0
+R18
+R6
+Xmemory_pkg
+R8
+R9
+R11
+!i10b 1
+!s100 8B^HF7Db5znTD?lL71OGY0
+IzP_^Lie75=llg;HYM1a7:0
+S1
+R12
+w1771613109
+8D:\iverilog\repos\APS\Labs\03.Regfile\memory_pkg.sv
+FD:\iverilog\repos\APS\Labs\03.Regfile\memory_pkg.sv
+!i122 19
+L0 11 0
+VzP_^Lie75=llg;HYM1a7:0
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R6
+vregister_file
+R8
+R9
+R10
+R11
+!i10b 1
+!s100 Z8^3j=FK`?b@S1F?MHdYE2
+Icc`A48EGS2NNjT7iY4YQU3
+S1
+R12
+w1771680502
+8D:\iverilog\repos\APS\Labs\03.Regfile\register_file.sv
+FD:\iverilog\repos\APS\Labs\03.Regfile\register_file.sv
+!i122 19
+L0 1 50
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R6
+vregister_file_ref
+R19
+R9
+R11
+!i10b 1
+!s100 db1IRo?GEd:528fQm^RPM2
+I4i1=IS]2OH_c4flDDNU6A1
+S1
+R12
+R20
+R21
+R22
+!i122 20
+L0 187 62
+R13
+R14
+r1
+!s85 0
+31
+R23
+R24
+R25
+!i113 0
+R18
+R6
