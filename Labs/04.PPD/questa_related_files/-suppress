@@ -1,0 +1,8 @@
+# ** Warning: (vsim-12019) Incorrectly (or incompletely) specified option '-l': (Argument '-suppress' appears to be a simulator switch).
+# vsim -sv_seed random -voptargs="+acc" -debugDB -c -l -suppress 7033 logs/simulation.log work.lab_03_tb_register_file -do "do wave.do; run -all; quit" 
+# Start time: 16:29:33 on Feb 21,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'logs/simulation' at "logs/simulation".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:29:34 on Feb 21,2026, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 1
