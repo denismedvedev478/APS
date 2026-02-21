@@ -1,5 +1,5 @@
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-Start time: 16:29:56 on Feb 21,2026
+Start time: 17:15:18 on Feb 21,2026
 vlog -work work -suppress 2244 -l logs/compile_rtl.log -f ../rtl.files 
 -- Compiling module instr_mem
 -- Importing package memory_pkg
@@ -11,5 +11,5 @@ vlog -work work -suppress 2244 -l logs/compile_rtl.log -f ../rtl.files
 Top level modules:
 	instr_mem
 	lab_03_tb_register_file
-End time: 16:29:57 on Feb 21,2026, Elapsed time: 0:00:01
+End time: 17:15:18 on Feb 21,2026, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0

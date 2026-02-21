@@ -40,11 +40,12 @@ o-quiet -auto_acc_if_foreign -work work -suppress 7033 -debugdb +acc
 R6
 n@_opt1
 R7
+R1
 vinstr_mem
 Z8 2D:\iverilog\repos\APS\Labs\03.Regfile\instr_mem.sv|D:\iverilog\repos\APS\Labs\03.Regfile\memory_pkg.sv|D:\iverilog\repos\APS\Labs\03.Regfile\register_file.sv|D:\iverilog\repos\APS\Labs\03.Regfile\lab_03_tb_register_file.sv
 Z9 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 Z10 DXx4 work 10 memory_pkg 0 22 zP_^Lie75=llg;HYM1a7:0
-Z11 !s110 1771680597
+Z11 !s110 1771683318
 !i10b 1
 !s100 fX7^fENi?m>fB`lRVNE>k1
 IH18VIc;N3KAKQ]<MCI2Ub2
@@ -53,14 +54,14 @@ Z12 dD:/iverilog/repos/APS/Labs/03.Regfile/questa_related_files
 w1771680452
 8D:\iverilog\repos\APS\Labs\03.Regfile\instr_mem.sv
 FD:\iverilog\repos\APS\Labs\03.Regfile\instr_mem.sv
-!i122 19
+!i122 21
 L0 1 21
 Z13 VDg1SIo80bB@j0V0VzS_@n1
 Z14 OL;L;2024.1;79
 r1
 !s85 0
 31
-Z15 !s108 1771680596.000000
+Z15 !s108 1771683318.000000
 Z16 !s107 D:\iverilog\repos\APS\Labs\03.Regfile\lab_03_tb_register_file.sv|D:\iverilog\repos\APS\Labs\03.Regfile\register_file.sv|D:\iverilog\repos\APS\Labs\03.Regfile\memory_pkg.sv|D:\iverilog\repos\APS\Labs\03.Regfile\instr_mem.sv|
 Z17 !s90 -work|work|-suppress|2244|-l|logs/compile_rtl.log|-f|../rtl.files|
 !i113 0
@@ -78,16 +79,16 @@ R12
 Z20 w1771620471
 Z21 8../lab_03_tb_register_file.sv
 Z22 F../lab_03_tb_register_file.sv
-!i122 20
+!i122 22
 L0 11 175
 R13
 R14
 r1
 !s85 0
 31
-Z23 !s108 1771680597.000000
-Z24 !s107 ../lab_03_tb_register_file.sv|
-Z25 !s90 -work|work|-suppress|2244|-l|logs/compile_tb.log|../lab_03_tb_register_file.sv|
+R15
+!s107 ../lab_03_tb_register_file.sv|
+Z23 !s90 -work|work|-suppress|2244|-l|logs/compile_tb.log|../lab_03_tb_register_file.sv|
 !i113 0
 R18
 R6
@@ -103,7 +104,7 @@ R12
 w1771613109
 8D:\iverilog\repos\APS\Labs\03.Regfile\memory_pkg.sv
 FD:\iverilog\repos\APS\Labs\03.Regfile\memory_pkg.sv
-!i122 19
+!i122 21
 L0 11 0
 VzP_^Lie75=llg;HYM1a7:0
 R14
@@ -129,7 +130,7 @@ R12
 w1771680502
 8D:\iverilog\repos\APS\Labs\03.Regfile\register_file.sv
 FD:\iverilog\repos\APS\Labs\03.Regfile\register_file.sv
-!i122 19
+!i122 21
 L0 1 50
 R13
 R14
@@ -154,16 +155,16 @@ R12
 R20
 R21
 R22
-!i122 20
+!i122 22
 L0 187 62
 R13
 R14
 r1
 !s85 0
 31
+R15
+Z24 !s107 ../lab_03_tb_register_file.sv|
 R23
-R24
-R25
 !i113 0
 R18
 R6
