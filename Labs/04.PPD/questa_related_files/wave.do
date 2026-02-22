@@ -29,19 +29,24 @@ add wave -noupdate /lab_04_tb_CYBERcobra/DUT/res
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/WE
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/RD1
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/RD2
-add wave -noupdate -divider {New Divider}
+add wave -noupdate -divider {instruction memory}
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_insrt_mem/read_addr_i
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_insrt_mem/read_data_o
-add wave -noupdate -divider {New Divider}
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/clk_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/rst_i
+add wave -noupdate -divider ALU
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/alu_op_i
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/a_i
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/b_i
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/result_o
 add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/flag_o
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/result_comb
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/flag_comb
+add wave -noupdate -divider regfile
+add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/clk_i
+add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/read_addr1_i
+add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/read_addr2_i
+add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/write_addr_i
+add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/write_data_i
+add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/write_enable_i
+add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/read_data1_o
+add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/read_data2_o
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {12 ns} 0}
 quietly wave cursor active 1
@@ -59,4 +64,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {133 ns}
+WaveRestoreZoom {0 ns} {121 ns}
