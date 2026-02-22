@@ -9,7 +9,11 @@ See https://github.com/MPSU/APS/blob/master/LICENSE file for licensing details.
 * ------------------------------------------------------------------------------
 */
 module lab_04_tb_CYBERcobra();
-
+    wire [31:0] OUT;
+    reg clk;
+    reg rstn;
+    reg [15:0] sw_i;
+    
     CYBERcobra DUT(
     .clk_i(clk),
     .rst_i(rstn),
@@ -17,10 +21,7 @@ module lab_04_tb_CYBERcobra();
     .out_o(OUT)
     );
 
-    wire [31:0] OUT;
-    reg clk;
-    reg rstn;
-    reg [15:0] sw_i;
+
 
     initial clk <= 0;
     always #5 clk = ~clk;
