@@ -1,0 +1,39 @@
+Почему не работало?
+Образовывались комбинационные петли:
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 35 ns ###############
+#   Active process: /lab_04_tb_CYBERcobra/DUT/u_register_file/#IMPLICIT-WIRE(read_data1_o)#14 @ sub-iteration 0
+#     Source: D:/iverilog/repos/APS/Labs/04.PPD/CYBERcobra.sv:59
+#     Assigning reg to (val=32dcd4 unk=0)
+#   Active process: /lab_04_tb_CYBERcobra/DUT/u_alu/#IMPLICIT-WIRE(result_o)#9 @ sub-iteration 0
+#     Source: D:/iverilog/repos/APS/Labs/04.PPD/CYBERcobra.sv:70
+#     Assigning reg to (val=32dcd6 unk=0)
+#   Active process: /lab_04_tb_CYBERcobra/DUT/u_alu/#IMPLICIT-WIRE(result_o)#9 @ sub-iteration 1
+#     Source: D:/iverilog/repos/APS/Labs/04.PPD/CYBERcobra.sv:70
+#     Assigning reg to (val=32dcd5 unk=0)
+#   Active process: /lab_04_tb_CYBERcobra/DUT/u_register_file/#IMPLICIT-WIRE(read_data1_o)#14 @ sub-iteration 2
+#     Source: D:/iverilog/repos/APS/Labs/04.PPD/CYBERcobra.sv:59
+#     Assigning reg to (val=32dcd6 unk=0)
+#   Active process: /lab_04_tb_CYBERcobra/DUT/u_register_file/#IMPLICIT-WIRE(read_data1_o)#14 @ sub-iteration 3
+#     Source: D:/iverilog/repos/APS/Labs/04.PPD/CYBERcobra.sv:59
+#     Assigning reg to (val=32dcd5 unk=0)
+#   Active process: /lab_04_tb_CYBERcobra/DUT/u_alu/#IMPLICIT-WIRE(result_o)#9 @ sub-iteration 3
+#     Source: D:/iverilog/repos/APS/Labs/04.PPD/CYBERcobra.sv:70
+#     Assigning reg to (val=32dcd7 unk=0)
+#   Active process: /lab_04_tb_CYBERcobra/DUT/u_alu/#IMPLICIT-WIRE(result_o)#9 @ sub-iteration 4
+#     Source: D:/iverilog/repos/APS/Labs/04.PPD/CYBERcobra.sv:70
+#     Assigning reg to (val=32dcd6 unk=0)
+################# END OF LOOP #################
+
+Из-за того, что я думал про regfile так:
+always_comb begin : comb_read_addr2_i
+    if (read_addr2_i == '0) begin
+        read_data2_o = '0;
+    end
+    /*else if (write_enable_i && read_addr2_i == write_addr_i) begin  //<----- что раз у нас однотактный процессор, 
+        read_data2_o = write_data_i;                                  //то он должен работать таким образом 
+    end*/                                                             //меня изначально это напрягало, но тесты прошли без проблем
+    else begin
+        read_data2_o = rf_mem[read_addr2_i[ADDR_WIDTH-1:0]];
+    end
+end
