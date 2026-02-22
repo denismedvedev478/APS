@@ -53,7 +53,7 @@ always_comb begin
   endcase
 end
 logic WE;
-assign WE = ~B;
+assign WE = ~(J || B);
 
 logic[31:0] RD1, RD2;
 register_file u_register_file(
