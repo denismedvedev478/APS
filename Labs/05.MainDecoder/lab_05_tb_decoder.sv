@@ -10,7 +10,9 @@ See https://github.com/MPSU/APS/blob/master/LICENSE file for licensing details.
 */
 
 module lab_05_tb_decoder();
-
+  localparam ERROR_THRESHOLD_COUNT =200;
+  integer f;
+  initial f = $fopen("report.log");
   import decoder_pkg::*;
   typedef class riscv_instr;
   riscv_instr instr = new();
@@ -358,9 +360,9 @@ module lab_05_tb_decoder();
 
 
   always @(posedge clk) begin
-    if((err_count >= 10) & !test_paused_by_errs) begin
+    if((err_count >= ERROR_THRESHOLD_COUNT) & !test_paused_by_errs) begin
       test_paused_by_errs = '1;
-      $display("\nTest has been stopped after 10 errors");
+      $display("\nTest has been stopped after %d errors", ERROR_THRESHOLD_COUNT);
       $stop();
     end
   end
@@ -464,6 +466,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("illegal_instr_o value is incorrect (    %b instead of     %b), instruction: %s %s", illegal_instr_o, grm_illegal_instr_o , raw_instr, instr_str  );
+    $fwrite(f, "illegal_instr_o value is incorrect (    %b instead of     %b), instruction: %s %s\n", illegal_instr_o, grm_illegal_instr_o , raw_instr, instr_str  );
     err_count++;
   end
 
@@ -473,6 +476,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("a_sel_o         value is incorrect (   %02b instead of    %02b), instruction: %s %s", a_sel_o   , grm_a_sel_o , raw_instr, instr_str  );
+    $fwrite(f, "a_sel_o         value is incorrect (   %02b instead of    %02b), instruction: %s %s\n", a_sel_o   , grm_a_sel_o , raw_instr, instr_str  );
     err_count++;
   end
 
@@ -482,6 +486,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("b_sel_o         value is incorrect (  %03b instead of   %03b), instruction: %s %s", b_sel_o   , grm_b_sel_o , raw_instr, instr_str  );
+    $fwrite(f, "b_sel_o         value is incorrect (  %03b instead of   %03b), instruction: %s %s\n", b_sel_o   , grm_b_sel_o , raw_instr, instr_str  );
     err_count++;
   end
 
@@ -491,6 +496,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("alu_op_o        value is incorrect (%05b instead of %05b), instruction: %s %s", alu_op_o  , grm_alu_op_o, raw_instr, instr_str  );
+    $fwrite(f, "alu_op_o        value is incorrect (%05b instead of %05b), instruction: %s %s\n", alu_op_o  , grm_alu_op_o, raw_instr, instr_str  );
     err_count++;
   end
 
@@ -500,6 +506,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("csr_op_o        value is incorrect (  %03b instead of   %03b), instruction: %s %s", csr_op_o  , grm_csr_op_o, raw_instr, instr_str  );
+    $fwrite(f, "csr_op_o        value is incorrect (  %03b instead of   %03b), instruction: %s %s\n", csr_op_o  , grm_csr_op_o, raw_instr, instr_str  );
     err_count++;
   end
 
@@ -509,6 +516,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("csr_we_o        value is incorrect (    %b instead of     %b), instruction: %s %s", csr_we_o  , grm_csr_we_o, raw_instr, instr_str  );
+    $fwrite(f, "csr_we_o        value is incorrect (    %b instead of     %b), instruction: %s %s\n", csr_we_o  , grm_csr_we_o, raw_instr, instr_str  );
     err_count++;
   end
 
@@ -518,6 +526,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("mem_req_o       value is incorrect (    %b instead of     %b), instruction: %s %s", mem_req_o , grm_mem_req_o, raw_instr, instr_str );
+    $fwrite(f, "mem_req_o       value is incorrect (    %b instead of     %b), instruction: %s %s\n", mem_req_o , grm_mem_req_o, raw_instr, instr_str );
     err_count++;
   end
 
@@ -527,6 +536,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("mem_we_o        value is incorrect (    %b instead of     %b), instruction: %s %s", mem_we_o  , grm_mem_we_o, raw_instr, instr_str  );
+    $fwrite(f, "mem_we_o        value is incorrect (    %b instead of     %b), instruction: %s %s\n", mem_we_o  , grm_mem_we_o, raw_instr, instr_str  );
     err_count++;
   end
 
@@ -536,6 +546,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("mem_size_o      value is incorrect (  %03b instead of   %03b), instruction: %s %s", mem_size_o, grm_mem_size_o, raw_instr, instr_str);
+    $fwrite(f, "mem_size_o      value is incorrect (  %03b instead of   %03b), instruction: %s %s\n", mem_size_o, grm_mem_size_o, raw_instr, instr_str);
     err_count++;
   end
 
@@ -545,6 +556,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("gpr_we_o        value is incorrect (    %b instead of     %b), instruction: %s %s", gpr_we_o  , grm_gpr_we_o, raw_instr, instr_str  );
+    $fwrite(f, "gpr_we_o        value is incorrect (    %b instead of     %b), instruction: %s %s\n", gpr_we_o  , grm_gpr_we_o, raw_instr, instr_str  );
     err_count++;
   end
 
@@ -554,6 +566,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("wb_sel_o        value is incorrect (   %b instead of    %b), instruction: %s %s", wb_sel_o  , grm_wb_sel_o, raw_instr, instr_str  );
+    $fwrite(f, "wb_sel_o        value is incorrect (   %b instead of    %b), instruction: %s %s\n", wb_sel_o  , grm_wb_sel_o, raw_instr, instr_str  );
     err_count++;
   end
 
@@ -563,6 +576,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("branch_o        value is incorrect (    %b instead of     %b), instruction: %s %s", branch_o  , grm_branch_o, raw_instr, instr_str  );
+    $fwrite(f, "branch_o        value is incorrect (    %b instead of     %b), instruction: %s %s\n", branch_o  , grm_branch_o, raw_instr, instr_str  );
     err_count++;
   end
 
@@ -572,6 +586,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("jal_o           value is incorrect (    %b instead of     %b), instruction: %s %s", jal_o     , grm_jal_o   , raw_instr, instr_str  );
+    $fwrite(f, "jal_o           value is incorrect (    %b instead of     %b), instruction: %s %s\n", jal_o     , grm_jal_o   , raw_instr, instr_str  );
     err_count++;
   end
 
@@ -581,6 +596,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("jalr_o          value is incorrect (    %b instead of     %b), instruction: %s %s", jalr_o    , grm_jalr_o  , raw_instr, instr_str  );
+    $fwrite(f, "jalr_o          value is incorrect (    %b instead of     %b), instruction: %s %s\n", jalr_o    , grm_jalr_o  , raw_instr, instr_str  );
     err_count++;
   end
 
@@ -590,6 +606,7 @@ module lab_05_tb_decoder();
   )
   else begin
     $display("mret_o          value is incorrect (    %b instead of     %b), instruction: %s %s", mret_o    , grm_mret_o  , raw_instr, instr_str  );
+    $fwrite(f, "mret_o          value is incorrect (    %b instead of     %b), instruction: %s %s\n", mret_o    , grm_mret_o  , raw_instr, instr_str  );
     err_count++;
   end
 

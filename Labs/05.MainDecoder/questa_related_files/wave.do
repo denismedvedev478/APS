@@ -1,56 +1,53 @@
 onerror {resume}
-quietly virtual function -install /lab_04_tb_CYBERcobra/DUT -env /lab_04_tb_CYBERcobra/#INITIAL#29 { &{/lab_04_tb_CYBERcobra/DUT/J, /lab_04_tb_CYBERcobra/DUT/B, /lab_04_tb_CYBERcobra/DUT/WS, /lab_04_tb_CYBERcobra/DUT/ALUop, /lab_04_tb_CYBERcobra/DUT/RA1, /lab_04_tb_CYBERcobra/DUT/RA2, /lab_04_tb_CYBERcobra/DUT/PC_offset, /lab_04_tb_CYBERcobra/DUT/WA }} decoded_instr
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /lab_04_tb_CYBERcobra/OUT
-add wave -noupdate /lab_04_tb_CYBERcobra/clk
-add wave -noupdate /lab_04_tb_CYBERcobra/rstn
-add wave -noupdate /lab_04_tb_CYBERcobra/sw_i
+add wave -noupdate /lab_05_tb_decoder/DUT/fetched_instr_i
+add wave -noupdate /lab_05_tb_decoder/DUT/illegal_instr_o
+add wave -noupdate /lab_05_tb_decoder/DUT/opcode
+add wave -noupdate /lab_05_tb_decoder/DUT/rd
+add wave -noupdate /lab_05_tb_decoder/DUT/funct3
+add wave -noupdate /lab_05_tb_decoder/DUT/rs1
+add wave -noupdate /lab_05_tb_decoder/DUT/rs2
+add wave -noupdate /lab_05_tb_decoder/DUT/funct7
+add wave -noupdate /lab_05_tb_decoder/DUT/imm_I
+add wave -noupdate /lab_05_tb_decoder/DUT/imm_U
+add wave -noupdate /lab_05_tb_decoder/DUT/imm_S
+add wave -noupdate /lab_05_tb_decoder/DUT/imm_B
+add wave -noupdate /lab_05_tb_decoder/DUT/imm_J
+add wave -noupdate /lab_05_tb_decoder/DUT/imm_Z
 add wave -noupdate -divider {New Divider}
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/clk_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/rst_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/sw_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/out_o
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/flag
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/instruction
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/decoded_instr
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/J
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/B
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/WS
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/ALUop
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/RA1
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/RA2
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/PC_offset
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/WA
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/RF_const
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/jump
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/PC
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/WD
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/res
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/WE
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/RD1
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/RD2
-add wave -noupdate -divider {instruction memory}
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_insrt_mem/read_addr_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_insrt_mem/read_data_o
-add wave -noupdate -divider ALU
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/alu_op_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/a_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/b_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/result_o
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_alu/flag_o
-add wave -noupdate -divider regfile
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/clk_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/read_addr1_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/read_addr2_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/write_addr_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/write_data_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/write_enable_i
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/read_data1_o
-add wave -noupdate /lab_04_tb_CYBERcobra/DUT/u_register_file/read_data2_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/a_sel_check
+add wave -noupdate /lab_05_tb_decoder/DUT/a_sel_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/b_sel_check
+add wave -noupdate /lab_05_tb_decoder/DUT/b_sel_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/alu_op_check
+add wave -noupdate /lab_05_tb_decoder/DUT/alu_op_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/csr_op_check
+add wave -noupdate /lab_05_tb_decoder/DUT/csr_op_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/csr_we_check
+add wave -noupdate /lab_05_tb_decoder/DUT/csr_we_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/mem_req_check
+add wave -noupdate /lab_05_tb_decoder/DUT/mem_req_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/mem_we_check
+add wave -noupdate /lab_05_tb_decoder/DUT/mem_we_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/mem_size_check
+add wave -noupdate /lab_05_tb_decoder/DUT/mem_size_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/gpr_we_check
+add wave -noupdate /lab_05_tb_decoder/DUT/gpr_we_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/wb_sel_check
+add wave -noupdate /lab_05_tb_decoder/DUT/wb_sel_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/branch_check
+add wave -noupdate /lab_05_tb_decoder/DUT/branch_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/jal_check
+add wave -noupdate /lab_05_tb_decoder/DUT/jal_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/jalr_check
+add wave -noupdate /lab_05_tb_decoder/DUT/jalr_o
+add wave -noupdate -color Magenta /lab_05_tb_decoder/mret_check
+add wave -noupdate /lab_05_tb_decoder/DUT/mret_o
+add wave -noupdate /lab_05_tb_decoder/err_count
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {12 ns} 0}
+WaveRestoreCursors {{Cursor 1} {301 ns} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 334
+configure wave -namecolwidth 279
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -64,4 +61,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {121 ns}
+WaveRestoreZoom {237 ns} {580 ns}
