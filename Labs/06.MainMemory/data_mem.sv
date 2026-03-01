@@ -38,6 +38,7 @@ endgenerate
 
 BYTES_WORD cword_bytes_new;
 always_comb begin
+    cword_bytes_new = BYTES_WORD'(curr_word);
     for (int i = 0; i < 4; i++) begin // replace current_word's bytes with wdata_bytes foreach BE[i]==1
         if (byte_enable_i[i]) begin
             cword_bytes_new[i] = wdata_bytes[i];
