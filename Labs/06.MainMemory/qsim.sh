@@ -1,7 +1,7 @@
 #!/bin/bash
 WORK_DIR="work"
 LOG_DIR="logs"
-SIM_OPTIONS="-sv_seed 27691821 -voptargs=+acc -debugDB"
+SIM_OPTIONS="-sv_seed random -voptargs=+acc -debugDB"
 
 if ! [ -d questa_related_files/ ]; then
 mkdir -p "questa_related_files/logs"

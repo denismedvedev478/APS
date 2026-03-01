@@ -24,7 +24,7 @@ localparam WORD_WIDTH = 32;
 logic [WORD_WIDTH-1:0] ram [memory_pkg::DATA_MEM_SIZE_WORDS] = '{default: 32'h00000000};
 
 logic [$clog2(DATA_MEM_SIZE_WORDS)-1:0] word_addr;
-assign word_addr = addr_i / 4; // use whole address width despite DATA_MEM_SIZE_WORDS < 512
+assign word_addr = addr_i[$clog2(DATA_MEM_SIZE_WORDS)-1:0] / 4;
 
 WORD curr_word;
 assign curr_word = ram[word_addr];
@@ -50,7 +50,7 @@ logic [31:0] rdata_buf = 32'h00000000;
 always_ff @(posedge clk_i) begin
     if (mem_req_i) begin
         if (write_enable_i) begin
-            ram[word_addr] <= WORD'(cword_bytes_new); // *
+            ram[word_addrgt] <= WORD'(cword_bytes_new); // *
         end
         else begin
             rdata_buf <= curr_word;
