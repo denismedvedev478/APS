@@ -50,7 +50,7 @@ logic [31:0] rdata_buf = 32'h00000000;
 always_ff @(posedge clk_i) begin
     if (mem_req_i) begin
         if (write_enable_i) begin
-            ram[word_addrgt] <= WORD'(cword_bytes_new); // *
+            ram[word_addr] <= WORD'(cword_bytes_new); // *
         end
         else begin
             rdata_buf <= curr_word;
