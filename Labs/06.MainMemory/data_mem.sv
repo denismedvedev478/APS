@@ -24,7 +24,7 @@ localparam WORD_WIDTH = 32;
 logic [WORD_WIDTH-1:0] ram [memory_pkg::DATA_MEM_SIZE_WORDS] = '{default: 32'h00000000};
 
 logic [$clog2(DATA_MEM_SIZE_WORDS)-1:0] word_addr;
-assign word_addr = addr_i[$clog2(DATA_MEM_SIZE_WORDS)-1:0] / 4;
+assign word_addr = addr_i[$clog2(DATA_MEM_SIZE_BYTES)-1:0] / 4;
 
 WORD curr_word;
 assign curr_word = ram[word_addr];
